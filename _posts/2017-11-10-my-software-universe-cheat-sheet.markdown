@@ -21,6 +21,7 @@ List of useful commands for all technologies I regularly use.
 * [JVM](#jvm)
 * [Shell](#shell)
 * [Tmux](#tmux)
+* [AWS CLI] (#aws-cli)
 
 ## JVM
 
@@ -92,4 +93,12 @@ sed 's/\"/\\\"/g' $f
 Set start directory for current tmux session
 {% highlight raw %}
 Press 'Ctrl+B + :' and then write 'attach -c /path/to/start/directory'
+{% endhighlight %}
+
+## AWS CLI
+
+List all instances with the project tag set to <value>
+
+{% highlight shell %}
+aws ec2 describe-instances --filters "Name=tag:Project,Values=<value>" --output text --query 'Reservations[*].Instances[*].[ImageId,State.Name,PublicIpAddress,Tags[*]]' | column -t
 {% endhighlight %}
