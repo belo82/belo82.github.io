@@ -21,7 +21,7 @@ List of useful commands for all technologies I regularly use.
 * [JVM](#jvm)
 * [Shell](#shell)
 * [Tmux](#tmux)
-* [AWS CLI] (#aws-cli)
+* [AWS CLI](#aws-cli)
 
 ## JVM
 
@@ -91,9 +91,9 @@ sed 's/\"/\\\"/g' $f
 ## Tmux
 
 Set start directory for current tmux session
-{% highlight raw %}
-Press 'Ctrl+B + :' and then write 'attach -c /path/to/start/directory'
-{% endhighlight %}
+Press `Ctrl+B, :` and then write `attach -c /path/to/start/directory`
+
+Rename current session: `Ctrl+B, $`
 
 ## AWS CLI
 
