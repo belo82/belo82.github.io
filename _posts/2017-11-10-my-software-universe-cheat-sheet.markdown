@@ -48,6 +48,11 @@ Show all process as a tree
 ps ufax
 {% endhighlight %}
 
+Show processes listening on ports
+{% highlight shell %}
+sudo netstat -lneutp
+{% endhighlight %}
+
 Watch file size of the file
 {% highlight shell %}
 watch du -sh file.txt
@@ -83,7 +88,7 @@ awk 'length($0) > 0 {print $0}' file_with_blanks > new_file_wo_blanks
 {% endhighlight %}
 
 #### sed
-Escape quotes int the file `$f`
+Escape quotes in the file `$f`
 {% highlight shell %}
 sed 's/\"/\\\"/g' $f
 {% endhighlight %}
@@ -97,7 +102,7 @@ Rename current session: `Ctrl+B, $`
 
 ## AWS CLI
 
-List all instances with the project tag set to <value>
+List all instances with the project tag set to &lt;value&gt;
 
 {% highlight shell %}
 aws ec2 describe-instances --filters "Name=tag:Project,Values=<value>" --output text --query 'Reservations[*].Instances[*].[ImageId,State.Name,PublicIpAddress,Tags[*]]' | column -t
