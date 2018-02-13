@@ -40,6 +40,11 @@ Every 500ms print GC cause of the running JVM process
 jstat -gccause <PID> 500ms
 {% endhighlight %}
 
+Remote debugging
+{% highlight shell %}
+java -agentlib:jdwp=transport=dt_socket,server=y,address=8000,suspend=n
+{% endhighlight %}
+
 ## Shell
 
 #### misc
