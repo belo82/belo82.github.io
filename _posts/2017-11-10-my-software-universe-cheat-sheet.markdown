@@ -92,6 +92,11 @@ Remove empty lines from a file
 awk 'length($0) > 0 {print $0}' file_with_blanks > new_file_wo_blanks
 {% endhighlight %}
 
+Print first column but wrap value in double quotes
+{% highlight shell %}
+head file.csv | awk -F\; '{print "\x22"$1"\x22"}'
+{% endhighlight %}
+
 #### sed
 Escape quotes in the file `$f`
 {% highlight shell %}
